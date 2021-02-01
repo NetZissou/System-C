@@ -413,8 +413,16 @@ summary {
 </div>
 
 
-<div id="intros" class="section level1">
-<h1>Intros</h1>
+<div id="c-intros" class="section level1">
+<h1>C Intros</h1>
+<ol style="list-style-type: decimal">
+<li>hello.c – source code, plain text <code>%gcc -c hello hello.c</code></li>
+<li>Preprocessor <code>.c</code> + <code>.h</code> = <code>.i</code> –&gt; ultimate source code (#include expanded #defines replaced)</li>
+<li>Compiler <code>.i</code> –&gt; <code>.s</code> –&gt; assembler source code</li>
+<li>Assembler assembly code <code>.s</code> –&gt; <code>.o</code> –&gt; object file, close to executable, some unresolved symbols</li>
+<li>Link Editor object code <code>.o</code> + library links <code>a.out</code> –&gt; executable code</li>
+<li>hello (executable code) – %hello will execute the program</li>
+</ol>
 <div id="features" class="section level2">
 <h2>Features:</h2>
 <ul>
@@ -544,6 +552,21 @@ void main (int arc, char **arv) {
 <li>Nested blocks are fine, but no nested functions!</li>
 </ul>
 </div>
+</div>
+</div>
+<div id="c-overview" class="section level1">
+<h1>C Overview</h1>
+<div id="basic-data-types" class="section level2">
+<h2>Basic Data Types</h2>
+<p>~8, ~16, ~32, ~32 bits * Integer Types</p>
+<ul>
+<li>Floating point Types</li>
+</ul>
+<p>sizeof(char) &lt;= sizeof(short) &lt;= sizeof(int) &lt;= sizeof(long) sizeof(float) &lt;= sizeof(double) &lt;= sizeof(long double)</p>
+<p>Beside the basic types, there is a conceptually infinite class of derived types constructed from the fundamental types in the following ways: * array of objects (variables or derived types) of a given type * pointers to objects of a given type * structures containing a sequence of objects of various types * unions capable of containing any of one of sereral objects of various types This can be applied recursively…</p>
+</div>
+<div id="constants" class="section level2">
+<h2>Constants</h2>
 </div>
 </div>
 

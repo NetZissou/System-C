@@ -1,4 +1,12 @@
-# Intros
+# C Intros
+
+1) hello.c -- source code, plain text\n
+   `%gcc -c hello hello.c`\n
+2) Preprocessor `.c` + `.h` = `.i` --> ultimate source code (#include expanded #defines replaced)\n
+3) Compiler `.i` --> `.s` --> assembler source code\n
+4) Assembler assembly code `.s` --> `.o` --> object file, close to executable, some unresolved symbols\n
+5) Link Editor object code `.o` + library links `a.out` --> executable code
+6) hello (executable code) -- %hello will execute the program
 
 ## Features:
 * Dos: 
@@ -107,10 +115,29 @@ Java has a main method, but it is in a class. Note C has no classes! No methods!
 * Nested blocks are fine, but no nested functions!
 
 
+# C Overview
+
+## Basic Data Types
+
+~8, ~16, ~32, ~32 bits
+* Integer Types
+
+* Floating point Types
 
 
+sizeof(char) <= sizeof(short) <= sizeof(int) <= sizeof(long)
+sizeof(float) <= sizeof(double) <= sizeof(long double)
 
+Beside the basic types, there is a conceptually infinite class of derived types constructed from the fundamental types in the following ways:
+* array of objects (variables or derived types) of a given type
+* pointers to objects of a given type
+* structures containing a sequence of objects of various types
+* unions capable of containing any of one of sereral objects of various types
+This can be applied recursively...
 
+## Constants
+
+![GitHub Logo](/images/constants.jpeg)
 
 
 
