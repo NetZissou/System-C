@@ -124,6 +124,7 @@ Java has a main method, but it is in a class. Note C has no classes! No methods!
 
 * Floating point Types
 
+char - smallest addressable unit, **always** 8 bits; guaranteed to always be one byte
 
 sizeof(char) <= sizeof(short) <= sizeof(int) <= sizeof(long)
 sizeof(float) <= sizeof(double) <= sizeof(long double)
@@ -138,6 +139,50 @@ This can be applied recursively...
 ## Constants
 
 ![GitHub Logo](/images/constants.jpeg)
+
+### Declaration of Constants
+Format: front or back both the keyword
+```
+float const PI = 3.141593f;
+const float PI = 3.141593f;
+```
+* The compile treats these constant as **read-only variable**, which indicates that you must initialize the constant before you don't have a chance.
+* Uppercase
+
+### Symbolic Constants
+A name that substitutes for a value that cannot be changed, which can be used to define a:
+* Constant
+* Statement
+* Mathematical expression
+`#define <name> <value>` --> `#define AREA 3.141593*r*r`
+```
+#define PI 3.1415926
+#define TRUE 1
+```
+**Note: no semi-colon is used for preprocessor directives**
+All occurrences are replaced by the preprocessor before the program is compiled by the compiler.
+
+## Variable Declarations
+* Format: type identifier, identifier, identifier...
+* Initial value: not required unless it's a constant
+```
+int i, j = 5,k;
+char code, category;
+const float PI = 3.214214f;
+```
+* Type conversion: **casting**
+   * Casting larger types to smaller types is dangerous
+   * To cast a variable explicitly: name = (type) identifier
+   ```
+   /* int 32bits, always char 8bits
+   int i = 65;
+   char ch; /*-128 to 127*/
+   ch = (char)i; 
+   ```
+
+## Keywords
+keywords are reserved identifiers to have a particular meaning.
+
 
 
 
