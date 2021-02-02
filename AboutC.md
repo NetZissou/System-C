@@ -183,8 +183,90 @@ const float PI = 3.214214f;
 ## Keywords
 keywords are reserved identifiers to have a particular meaning.
 
+## Operators
+* **classified according to the number of operands which they take**
+   * unary operators
+   * binary operators
+   * one ternary operator --> the conditional operator `?:`
+* Operands are expressions:
+   * constants
+   * variables
+   * or expressions which contain one or more operators
+* Expressions will always be evaluated --> has a value, a type
 
+### Precedence and Associativity
+* **Precedence** refers to the **relationship between two operators** in terms of the **order** in which the operations are performed
+   * a binary relation --> pairs of operators
+   * Binary operators are adjacent if they have one operand in common `3+5*6`
+   * unary operators are adjacent if they have the operand
+* Enforce a precedence --> using parentheses
+* when two adjacent operators have the same prededence --> **associativity**
+   * **L-R**: operation specified by the leftmost operator is done first
+   * **R-L**: vice versa
+Example:
+suppose *a = 1, b = 3, and c = 5* and we have `d = ++a*c+b++;`
+Note: ++a evaluate before the rest is done, b++ evaluate after the operation
+* Parenthesize unary operators:
+note that the compiler does the binary operation with the highest precedence first, expressions with unary operators are not evaluated until they need to be.
+```
+d = (++a) * c + (b++)
+```
+Not the precendence of binary operators are: 
+`*` --> `+` --> `=`
+* Now add the rest of the parentheses:
+```
+d = ( ((++a) * c) + (b++) )
+```
+* Value of expression
+   * ++a -> 2
+   * c --> 5
+   * **b++ --> 3**
+   * d = (2*5) + 3 = 13
+   * a = 2, **b = 4**, c = 3
+   
+### Assignment operators
+* What is assignment in C? **Assignments are expressions**, which indicates that like any other expression the assignment **has a value**., which is the value of the rightmost expression.
+* Assignment has the lowest precedence expect the comma operator
+* Embeded assignments: associativity
+   * `a = b = 1;` /* R-L  multiple assignment*/
+   * Others like `+=, -=, *=, /=, %=` same associativity - **R-L**
+* And note using an assignment orperator(=) is legal if we used that for equality(==). This is not a syntax error and our compiler will not fail.
 
+**= VS ==**
+* desired: `if(tokens == 6)` 
+* drop a = sign: `if(tokens=6)` always be true
+Instead, good practice is to code code defensively
+* `if (6 == tokens)`
+* `if (6 = tokens)` <-- this will not compile
+
+### Unary Operators
+* Always higher than Binary operators
+* `++a` and `a++` both have the behavior of a = a=1
+* `++a`: a is incremented **BEFORE**  a is evaluated in the expression
+* `a--`: a is incremented **AFTER**  a is evaluated in the expression
+```
+#include <stdio.h>
+int main() {
+   int a = 1;
+   printf("a is %d", ++a); /* print result: 2 */
+   return 0;
+}
+```
+
+```
+#include <stdio.h>
+int main() {
+   int a = 1;
+   printf("a is %d", a++); /* print result: 1 */
+   return 0;
+}
+```
+   
+
+ 
+   
+   
+   
 
 
 
